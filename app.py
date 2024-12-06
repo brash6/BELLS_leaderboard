@@ -653,7 +653,7 @@ def main():
 
     st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 
-    st.title("Safeguard Leaderboard")
+    st.title("BELLS Leaderboard")
     st.columns(2)[0].write(
         """
     The rise of large language models (LLMs) has been accompanied by the emergence of vulnerabilities, such as jailbreaks and prompt injections, which exploit these systems to bypass constraints and induce harmful or unintended behaviors. In response, safeguards have been developed to monitor inputs and outputs, aiming to detect and mitigate these vulnerabilities. These safeguards, while promising, require robust evaluation frameworks to assess their effectiveness and generalizability.
@@ -674,26 +674,12 @@ def main():
         else:
             to_show = PLOTS
 
-        save_plots = st.button("Save plots")
-        if save_plots:
-            st.write(f"Saving to {DIR_TO_SAVE_PLOTS}. Download them individually:")
-
     for name, plot in to_show.items():
         st.write(f"## {name}")
         with st.spinner(f"Crunching data for {name}"):
             plots = plot()
 
-        with st.sidebar:
-            if plots is not None and save_plots:
-                for plot_name, fig in plots.items():
-                    path = DIR_TO_SAVE_PLOTS / f"{plot_name}.pdf"
-                    fig.write_image(path)
 
-                    @st.fragment()
-                    def dl():
-                        st.download_button(plot_name, path.read_bytes(), f"{plot_name}.pdf")
-
-                    dl()
 
         st.divider()
 
