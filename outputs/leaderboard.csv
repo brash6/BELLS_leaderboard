@@ -1,0 +1,101 @@
+dataset,safeguard,failure_mode,tp,fp,tn,fn
+dan-jailbreak,lakera_guard,jailbreak,77,0,0,323
+dan-jailbreak,langkit-injections,jailbreak,268,0,0,132
+dan-jailbreak,langkit-proactive,jailbreak,66,0,0,334
+dan-jailbreak,llm_guard-jailbreak,jailbreak,284,0,0,116
+dan-jailbreak,nemo,jailbreak,337,0,0,60
+dan-jailbreak,prompt_guard,jailbreak,349,0,0,51
+dan-jailbreak,lakera_guard,prompt injection,0,325,75,0
+dan-jailbreak,langkit-injections,prompt injection,0,268,132,0
+dan-jailbreak,langkit-proactive,prompt injection,0,66,334,0
+dan-jailbreak,prompt_guard,prompt injection,0,28,372,0
+hf_jailbreak_prompts,lakera_guard,jailbreak,79,0,0,0
+hf_jailbreak_prompts,langkit-injections,jailbreak,79,0,0,0
+hf_jailbreak_prompts,langkit-proactive,jailbreak,5,0,0,74
+hf_jailbreak_prompts,llm_guard-jailbreak,jailbreak,70,0,0,9
+hf_jailbreak_prompts,nemo,jailbreak,73,0,0,6
+hf_jailbreak_prompts,prompt_guard,jailbreak,77,0,0,2
+hf_jailbreak_prompts,lakera_guard,prompt injection,0,79,0,0
+hf_jailbreak_prompts,langkit-injections,prompt injection,0,79,0,0
+hf_jailbreak_prompts,langkit-proactive,prompt injection,0,5,74,0
+hf_jailbreak_prompts,prompt_guard,prompt injection,0,2,77,0
+jailbreakbench-GCG,lakera_guard,jailbreak,0,0,0,400
+jailbreakbench-GCG,langkit-injections,jailbreak,163,0,0,237
+jailbreakbench-GCG,langkit-proactive,jailbreak,4,0,0,396
+jailbreakbench-GCG,llm_guard-jailbreak,jailbreak,245,0,0,155
+jailbreakbench-GCG,nemo,jailbreak,400,0,0,0
+jailbreakbench-GCG,prompt_guard,jailbreak,352,0,0,48
+jailbreakbench-GCG,lakera_guard,prompt injection,0,16,384,0
+jailbreakbench-GCG,langkit-injections,prompt injection,0,163,237,0
+jailbreakbench-GCG,langkit-proactive,prompt injection,0,4,396,0
+jailbreakbench-GCG,prompt_guard,prompt injection,0,48,352,0
+jailbreakbench-PAIR,lakera_guard,jailbreak,0,0,0,237
+jailbreakbench-PAIR,langkit-injections,jailbreak,108,0,0,129
+jailbreakbench-PAIR,langkit-proactive,jailbreak,0,0,0,237
+jailbreakbench-PAIR,llm_guard-jailbreak,jailbreak,81,0,0,156
+jailbreakbench-PAIR,nemo,jailbreak,153,0,0,84
+jailbreakbench-PAIR,prompt_guard,jailbreak,3,0,0,234
+jailbreakbench-PAIR,lakera_guard,prompt injection,0,93,144,0
+jailbreakbench-PAIR,langkit-injections,prompt injection,0,108,129,0
+jailbreakbench-PAIR,langkit-proactive,prompt injection,0,0,237,0
+jailbreakbench-PAIR,prompt_guard,prompt injection,0,225,12,0
+wildjailbreak,lakera_guard,jailbreak,0,0,0,400
+wildjailbreak,langkit-injections,jailbreak,99,0,0,301
+wildjailbreak,langkit-proactive,jailbreak,7,0,0,393
+wildjailbreak,llm_guard-jailbreak,jailbreak,216,0,0,184
+wildjailbreak,nemo,jailbreak,208,0,0,192
+wildjailbreak,prompt_guard,jailbreak,121,0,0,279
+wildjailbreak,lakera_guard,prompt injection,0,192,208,0
+wildjailbreak,langkit-injections,prompt injection,0,99,301,0
+wildjailbreak,langkit-proactive,prompt injection,0,7,393,0
+wildjailbreak,prompt_guard,prompt injection,0,235,165,0
+dan-normal,lakera_guard,jailbreak,0,7,393,0
+dan-normal,langkit-injections,jailbreak,0,90,310,0
+dan-normal,langkit-proactive,jailbreak,0,8,392,0
+dan-normal,llm_guard-jailbreak,jailbreak,0,41,359,0
+dan-normal,nemo,jailbreak,0,206,194,0
+dan-normal,prompt_guard,jailbreak,0,211,189,0
+dan-normal,lakera_guard,prompt injection,0,170,230,0
+dan-normal,langkit-injections,prompt injection,0,90,310,0
+dan-normal,langkit-proactive,prompt injection,0,8,392,0
+dan-normal,prompt_guard,prompt injection,0,133,267,0
+lmsys_normal,lakera_guard,jailbreak,0,2,398,0
+lmsys_normal,langkit-injections,jailbreak,0,18,382,0
+lmsys_normal,langkit-proactive,jailbreak,0,4,396,0
+lmsys_normal,llm_guard-jailbreak,jailbreak,0,37,363,0
+lmsys_normal,nemo,jailbreak,0,190,210,0
+lmsys_normal,prompt_guard,jailbreak,0,51,349,0
+lmsys_normal,lakera_guard,prompt injection,0,57,343,0
+lmsys_normal,langkit-injections,prompt injection,0,18,382,0
+lmsys_normal,langkit-proactive,prompt injection,0,4,396,0
+lmsys_normal,prompt_guard,prompt injection,0,329,71,0
+hallucinations,TRUE,hallucination,200,147,53,0
+hallucinations,groundedness,hallucination,172,1,199,28
+hallucinations,llm_guard-hallucination,hallucination,195,112,88,5
+hallucinations,trulens,hallucination,115,10,190,85
+hallucinations,ragas,hallucination,157,10,181,19
+hallucinations_mcq,TRUE,hallucination,202,152,38,8
+hallucinations_mcq,groundedness,hallucination,156,26,164,54
+hallucinations_mcq,llm_guard-hallucination,hallucination,199,144,46,11
+hallucinations_mcq,ragas,hallucination,122,37,138,67
+hallucinations_mcq,trulens,hallucination,77,18,172,133
+guardrail_attack-semantic,lakera_guard,jailbreak,67,0,0,333
+guardrail_attack-semantic,langkit-injections,jailbreak,243,0,0,157
+guardrail_attack-semantic,langkit-proactive,jailbreak,24,0,0,376
+guardrail_attack-semantic,llm_guard-jailbreak,jailbreak,314,0,0,86
+guardrail_attack-semantic,nemo,jailbreak,105,0,0,295
+guardrail_attack-semantic,prompt_guard,jailbreak,334,0,0,66
+guardrail_attack-semantic,lakera_guard,prompt injection,0,264,136,0
+guardrail_attack-semantic,langkit-injections,prompt injection,0,243,157,0
+guardrail_attack-semantic,langkit-proactive,prompt injection,0,24,376,0
+guardrail_attack-semantic,prompt_guard,prompt injection,0,53,347,0
+guardrail_attack-syntactic,lakera_guard,jailbreak,0,0,0,400
+guardrail_attack-syntactic,langkit-injections,jailbreak,77,0,0,323
+guardrail_attack-syntactic,langkit-proactive,jailbreak,0,0,0,400
+guardrail_attack-syntactic,llm_guard-jailbreak,jailbreak,396,0,0,4
+guardrail_attack-syntactic,prompt_guard,jailbreak,0,0,0,400
+guardrail_attack-syntactic,lakera_guard,prompt injection,0,0,400,0
+guardrail_attack-syntactic,langkit-injections,prompt injection,0,77,323,0
+guardrail_attack-syntactic,langkit-proactive,prompt injection,0,0,400,0
+guardrail_attack-syntactic,prompt_guard,prompt injection,0,0,400,0
+guardrail_attack-syntactic,nemo,jailbreak,296,0,0,68
