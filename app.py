@@ -620,30 +620,30 @@ def plot_result_tables():
         return METRICS[metric][0](cm)
 
     for failure_mode in failure_modes:
+        if "prompt" not in failure_mode:
         # Show a table
-        df = pd.DataFrame(
-            {
-                safeguard: [
-                    get_leaderboard_data(dataset, safeguard, failure_mode) for dataset in datasets
-                ]
-                for safeguard in safeguards
-            },
-            index=datasets,
-        )
+            df = pd.DataFrame(
+                {
+                    safeguard: [
+                        get_leaderboard_data(dataset, safeguard, failure_mode) for dataset in datasets
+                    ]
+                    for safeguard in safeguards
+                },
+                index=datasets,
+            )
 
-        # Drop rows and cols which are all None
-        df = df.dropna(axis=0, how="all")
-        df = df.dropna(axis=1, how="all")
+            # Drop rows and cols which are all None
+            df = df.dropna(axis=0, how="all")
+            df = df.dropna(axis=1, how="all")
 
-        st.write(f"### {failure_mode.title()}")
-        st.write(df)
+            st.write(f"### {failure_mode.title()}")
+            st.write(df)
 
 
 PLOTS = {
     "Each safeguard is weak on one dataset": plot_each_safeguard_weak_on_one_dataset,
     "Jailbreak Safeguard Performance": plot_fp_fn_jailbreak,
     "Jailbreak Safeguard Performance per dataset": bar_plot_perf_per_jailbreak_dataset,
-    "Distribution of the number of safeguards detecting a prompt": plot_distribution_of_nb_safeguard_detecting_prompts,
     "Hallucination Safeguard Performance": plot_hallucinations,
     "Results table": plot_result_tables,
 }
