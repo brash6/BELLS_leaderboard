@@ -1,0 +1,4 @@
+dataset: HF ChatGPT jailbreak prompts
+failure type: jailbreak
+description: This dataset is a known but small dataset of 79 cu-rated jailbreaks available on Hugging Face.
+source url: https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts
