@@ -255,7 +255,11 @@ def plot_each_safeguard_weak_on_one_dataset():
     )
     st.plotly_chart(fig)
 
-    return {"each_safeguard_weak_on_one_dataset_results": fig}
+    with st.expander("Bonus") as bonus:
+        st.write("""The plot shows that every safeguard fails to detect jailbreaks effectively on at least one dataset, with detection rates dropping 
+                 below 34.2%. This highlights the need for more robust or specialized safeguards to address diverse vulnerabilities.""")
+
+    return {"each_safeguard_weak_on_one_dataset_results": fig, "bonus" : bonus}
 
 
 @st.fragment()
@@ -390,7 +394,13 @@ def plot_fp_fn_jailbreak():
     st.subheader("Safeguard performance (Bottom left is better)")
     st.plotly_chart(fig)
 
-    return {f"jailbreak_results_{false_alarm_dataset}_{missed_detection_dataset}": fig}
+    with st.expander("Bonus") as bonus:
+        st.write("""Safeguards mostly fire on different prompts, with
+                    overall only 7% of the prompts that are detected by no safeguard. This indicates that
+                    safeguards are complementary, and a combination of them could be a much better defense
+                    if their false positive rates were low enough.""")
+
+    return {f"jailbreak_results_{false_alarm_dataset}_{missed_detection_dataset}": fig, "bonus": bonus}
 
 
 def get_property_from_safeguard_metadata(safeguard_name, property_name):
@@ -484,7 +494,13 @@ def bar_plot_perf_per_jailbreak_dataset():
     )
     st.plotly_chart(fig)
 
-    return {"jailbreak_bars_results": fig}
+    with st.expander("Bonus") as bonus:
+        st.write("""The chart demonstrates the effectiveness of various guard methods in handling both adversarial and normal inputs. 
+                 While most methods handle Normal Traces well, there is a clear variability in performance when it comes to Jailbreak Traces, 
+                 emphasizing the need for stronger or more targeted protection methods.
+                """)
+
+    return {"jailbreak_bars_results": fig, "bonus": bonus}
 
 
 @st.fragment()
@@ -593,7 +609,13 @@ def plot_hallucinations():
     st.subheader("Safeguard performance (Bottom left is better)")
     st.plotly_chart(fig)
 
-    return {f"hallucination_results_{dataset_for_evaluation}": fig}
+    with st.expander("Bonus") as bonus:
+        st.write("""The most effective safeguards are those located near the bottom-left, such as "Azure groundedness" and "RAGAS" 
+                 which balance low missed detections and false alarms. Safeguards with high missed detection rates (like "Trulens") may need 
+                 improvement, especially for critical use cases where detecting hallucinations is essential. 
+                """)
+
+    return {f"hallucination_results_{dataset_for_evaluation}": fig, "bonus": bonus}
 
 
 @st.fragment()
@@ -638,6 +660,14 @@ def plot_result_tables():
 
             st.write(f"### {failure_mode.title()}")
             st.write(df)
+    
+    with st.expander("Bonus") as bonus:
+        st.write("""The table highlights the strengths and weaknesses of various safeguards across different failure modes and datasets. 
+                 The "Total" option show the absolute detection results over the 400 prompts selected for each failure mode and dataset.
+                """)
+        
+    return 0, 0
+
 
 
 PLOTS = {
@@ -673,13 +703,11 @@ def main():
             to_show = {plot_to_show: PLOTS[plot_to_show]}
         else:
             to_show = PLOTS
-
+    
     for name, plot in to_show.items():
         st.write(f"## {name}")
         with st.spinner(f"Crunching data for {name}"):
-            plots = plot()
-
-
+            plots, bonus = plot()
 
         st.divider()
 
